@@ -1,0 +1,14 @@
+{
+  "test-ai": [
+    {
+      "baseProperties": {
+        "name": "test-aiField",
+        "id": "test-aiField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "test-aiExternalComponent"
+    }
+  ]
+}
