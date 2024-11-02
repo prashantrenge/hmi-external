@@ -1,3 +1,4 @@
+import { TestComponent } from './components/test-component-external/test-component-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -28,7 +29,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent],
+        StackblitzEditorComponent, TestComponent],
     imports: IMPORT_MODULES,
     exports: [PasswordExternalComponent,
         TextExternalComponent,
@@ -38,7 +39,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent],
+        GenerateWithAiComponent, TestComponent],
     providers: [
         DialogService 
     ]
