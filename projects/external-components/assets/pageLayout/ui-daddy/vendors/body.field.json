@@ -674,7 +674,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1127,7 +1129,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined",
+                "requiredValue": "true"
             },
             "value": null,
             "placeholder": null
