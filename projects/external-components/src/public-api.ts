@@ -1,50 +1,19 @@
-import { TestComponent } from './components/test-component-external/test-component-external.component';
-import { TestComponent } from './components/test-component-external/test-component-external.component';
-import { NgModule } from '@angular/core';
-import { PasswordExternalComponent } from './components/password-external/password-external.component';
-import { TextExternalComponent } from './components/text-external/text-external.component';
-import { TableExternalComponent } from './components/table-external/table-external.component';
-import { FilterGroupExternalComponent } from './components/filter-group-external/filter-group-external.component';
-import {TableModule} from 'primeng/table';
-import { DropdownExternal } from './components/dropdown-external/dropdown-external.component';
-import { ChartsExternalComponent } from './components/charts-external/charts-external.component';
+/*
+ * Public API Surface of external-components
+ */
 
-import {PasswordModule} from 'primeng/password';
-import {DropdownModule} from 'primeng/dropdown';
-import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
-import { RowDataHandlerDirective } from './components/table-external/rowDataHandler/row-data-handler.directive';
-import { IframeExternalComponent } from './components/iframe-external/iframe-external.component';
-import { ListPipe } from './pipes/list/list.pipe';
-import { GenerateWithAiComponent } from './components/generate-with-ai/generate-with-ai.component';
-import { StackblitzEditorComponent } from './components/stackblitz-editor/stackblitz-editor.component';
-import { IMPORT_MODULES } from './constant/stackblitz-constant';
-
-@NgModule({
-    declarations: [PasswordExternalComponent,
-        TextExternalComponent,
-        TableExternalComponent,
-        FilterGroupExternalComponent,
-        DropdownExternal,
-        ChartsExternalComponent,
-        RowDataHandlerDirective,
-        IframeExternalComponent,
-        ListPipe,
-        GenerateWithAiComponent,
-        StackblitzEditorComponent, TestComponent, TestComponent],
-    imports: IMPORT_MODULES,
-    exports: [PasswordExternalComponent,
-        TextExternalComponent,
-        TableExternalComponent,
-        FilterGroupExternalComponent,
-        TableModule,
-        DropdownExternal,
-        IframeExternalComponent,
-        ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, TestComponent, TestComponent],
-    providers: [
-        DialogService 
-    ]
-})
-export class PrimengSelectorsModule { }
-
-//Create BaseProperties class for hmi-external
+export * from './lib/primeng-selectors/primeng-selectors.module';
+export * from './lib/primeng-selectors/components/password-external/password-external.component';
+export * from './lib/primeng-selectors/components/text-external/text-external.component';
+export * from './lib/primeng-selectors/components/table-external/table-external.component';
+export * from './lib/primeng-selectors/components/dropdown-external/dropdown-external.component';
+export * from './lib/primeng-selectors/components/charts-external/charts-external.component';
+export * from './lib/primeng-selectors/components/iframe-external/iframe-external.component';
+export * from './lib/primeng-selectors/components/filter-group-external/filter-group-external.component';
+export * from 'primeng/dropdown';
+export * from 'primeng/password';
+export * from 'primeng/checkbox';
+export * from 'primeng/calendar';
+export {ToggleButtonModule, ToggleButton} from 'primeng/togglebutton';
+export * from './lib/primeng-selectors/util/util';
+export * from './lib/primeng-selectors/components/generate-with-ai/generate-with-ai.component';
