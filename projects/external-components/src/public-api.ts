@@ -19,3 +19,4 @@ export * from './lib/primeng-selectors/util/util';
 export * from './lib/primeng-selectors/components/generate-with-ai/generate-with-ai.component';
 export * from './lib/primeng-selectors/components/test-component-external/test-component-external.component';
 export * from './lib/primeng-selectors/components/test-component-2-external/test-component-2-external.component';
+export * from './lib/primeng-selectors/components/test-component-3-external/test-component-3-external.component';

@@ -317,5 +317,26 @@
       "disabled"
     ],
     "customAttributes": []
+  },
+  {
+    "widgetList": [
+      {
+        "name": "test-component-3ExternalComponent",
+        "icon": "bi bi-box",
+        "label": "test-component-3ExternalComponent"
+      }
+    ],
+    "hiddenBaseProperties": [
+      "label"
+    ],
+    "hiddenLayoutProperties": [
+      "themeClass"
+    ],
+    "hiddenExpressionProperties": [
+      "required",
+      "readOnly",
+      "disabled"
+    ],
+    "customAttributes": []
   }
 ]
