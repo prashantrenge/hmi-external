@@ -24,4 +24,6 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
     }
   `]
 })
-export class TestComponent2 extends CommonExternalComponent {}
+export class TestComponent2 extends CommonExternalComponent {
+    // Try updating
+}
