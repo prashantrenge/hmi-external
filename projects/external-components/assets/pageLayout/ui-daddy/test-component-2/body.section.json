@@ -1,0 +1,41 @@
+{
+  "layout": [
+    {
+      "id": "test-component-2Form",
+      "type": "form",
+      "layout": {
+        "column": {
+          "count": 1,
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "autoPlace": "false"
+        }
+      },
+      "sectionList": [
+        {
+          "id": "test-component-2",
+          "type": "content",
+          "layout": {
+            "css": {
+              "customClassName": "test-component-2-content"
+            },
+            "column": {
+              "count": 2,
+              "ratio": {
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
+              },
+              "autoPlace": "false"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
