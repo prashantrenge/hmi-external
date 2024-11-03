@@ -6,25 +6,34 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   template: `
     <div class="chart-container">
       <h2>Rise in Sea Water Temperature (Last 10 Years)</h2>
-      <div class="bar" *ngFor="let year of years" [style.height.%]="getBarHeight(year)">
-        <span>{{ year.year }}°C</span>
+      <div class="bars">
+        <div class="bar" *ngFor="let year of years" [style.height.%]="getBarHeight(year)">
+          <span>{{ year.year }}: {{ year.temp }}°C</span>
+        </div>
       </div>
     </div>
   `,
-  styles: [
-    `
+  styles: [`
     .chart-container {
       width: 80%;
       margin: auto;
       text-align: center;
     }
+    .bars {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 300px; /* Set a fixed height for the chart */
+      margin-top: 20px;
+      border-left: 2px solid #000; /* Optional: Add left border */
+      border-bottom: 2px solid #000; /* Optional: Add bottom border */
+    }
     .bar {
-      display: inline-block;
-      width: 8%;
-      margin: 0 1%;
+      width: 8%; /* Adjusted width for better spacing */
       background-color: #4CAF50;
-      color: red;
+      color: white;
       position: relative;
+      transition: height 0.3s ease; /* Smooth transition for bar height */
     }
     .bar span {
       position: absolute;
@@ -32,9 +41,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
       left: 50%;
       transform: translateX(-50%);
       margin-bottom: 5px;
+      font-size: 12px; /* Smaller font size for clarity */
     }
-  `,
-  ],
+  `]
 })
 export class BarChartComponent extends CommonExternalComponent {
   years = [
@@ -47,12 +56,12 @@ export class BarChartComponent extends CommonExternalComponent {
     { year: 2019, temp: 15.7 },
     { year: 2020, temp: 15.9 },
     { year: 2021, temp: 16.1 },
-    { year: 2022, temp: 16.3 },
+    { year: 2022, temp: 16.3 }
   ];
 
   getBarHeight(year: { temp: number }): number {
-    const minTemp = Math.min(...this.years.map((y) => y.temp));
-    const maxTemp = Math.max(...this.years.map((y) => y.temp));
+    const minTemp = Math.min(...this.years.map(y => y.temp));
+    const maxTemp = Math.max(...this.years.map(y => y.temp));
     return ((year.temp - minTemp) / (maxTemp - minTemp)) * 100;
   }
 }
