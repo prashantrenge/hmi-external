@@ -317,26 +317,5 @@
       "disabled"
     ],
     "customAttributes": []
-  },
-  {
-    "widgetList": [
-      {
-        "name": "barChartExternalComponent",
-        "icon": "bi bi-box",
-        "label": "barChartExternalComponent"
-      }
-    ],
-    "hiddenBaseProperties": [
-      "label"
-    ],
-    "hiddenLayoutProperties": [
-      "themeClass"
-    ],
-    "hiddenExpressionProperties": [
-      "required",
-      "readOnly",
-      "disabled"
-    ],
-    "customAttributes": []
   }
 ]
