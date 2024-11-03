@@ -1,3 +1,4 @@
+import { TestComponent3 } from './components/test-component-5-external/test-component-5-external.component';
 import { TestComponent3 } from './components/test-component-4-external/test-component-4-external.component';
 import { TestComponent3 } from './components/test-component-3-external/test-component-3-external.component';
 import { TestComponent2 } from './components/test-component-2-external/test-component-2-external.component';
@@ -32,7 +33,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent, TestComponent, TestComponent2, TestComponent3, TestComponent3],
+        StackblitzEditorComponent, TestComponent, TestComponent2, TestComponent3, TestComponent3, TestComponent3],
     imports: IMPORT_MODULES,
     exports: [PasswordExternalComponent,
         TextExternalComponent,
@@ -42,7 +43,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, TestComponent, TestComponent2, TestComponent3, TestComponent3],
+        GenerateWithAiComponent, TestComponent, TestComponent2, TestComponent3, TestComponent3, TestComponent3],
     providers: [
         DialogService 
     ]

@@ -21,3 +21,4 @@ export * from './lib/primeng-selectors/components/test-component-external/test-c
 export * from './lib/primeng-selectors/components/test-component-2-external/test-component-2-external.component';
 export * from './lib/primeng-selectors/components/test-component-3-external/test-component-3-external.component';
 export * from './lib/primeng-selectors/components/test-component-4-external/test-component-4-external.component';
+export * from './lib/primeng-selectors/components/test-component-5-external/test-component-5-external.component';
