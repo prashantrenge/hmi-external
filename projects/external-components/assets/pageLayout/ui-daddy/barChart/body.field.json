@@ -1,0 +1,14 @@
+{
+  "barChart": [
+    {
+      "baseProperties": {
+        "name": "barChartField",
+        "id": "db-3",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "BarChartComponent"
+    }
+  ]
+}
