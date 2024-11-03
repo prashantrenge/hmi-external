@@ -137,7 +137,7 @@
                     },
                     {
                         "colName": "EmpId",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
@@ -295,6 +295,13 @@
                                         "actionType": "setfield",
                                         "field": "$dnd-39$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.email",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-40$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.password",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
@@ -706,7 +713,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
             "optionList": [
                 {
                     "value": "Admin",
@@ -1313,6 +1322,33 @@
         },
         {
             "baseProperties": {
+                "type": "password",
+                "id": "dnd-40",
+                "name": "msetclPasswordEdit",
+                "label": "Password",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "visible": "userType == 'Admin'"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "submit",
                 "id": "dnd-27",
                 "name": "msetclSaveUserBtn",
@@ -1442,6 +1478,12 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "msetclEmailEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "msetclPasswordEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -1716,6 +1758,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "optionList": [
@@ -2261,6 +2304,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "value": null,
@@ -2589,7 +2633,7 @@
                     },
                     {
                         "colName": "EmpId",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
@@ -2747,6 +2791,13 @@
                                         "actionType": "setfield",
                                         "field": "$dnd-139$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.email",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-140$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.password",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
@@ -3102,7 +3153,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
             "optionList": [
                 {
                     "value": "Vendor Admin",
@@ -3709,6 +3762,33 @@
         },
         {
             "baseProperties": {
+                "type": "password",
+                "id": "dnd-140",
+                "name": "passwordEdit",
+                "label": "Password",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "visible": "userType == 'Admin'"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "submit",
                 "id": "dnd-127",
                 "name": "saveUserBtn",
@@ -3838,6 +3918,12 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "emailEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "passwordEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -4112,6 +4198,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [
@@ -4657,6 +4744,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
