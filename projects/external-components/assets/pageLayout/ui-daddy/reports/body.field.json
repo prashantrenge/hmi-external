@@ -272,7 +272,7 @@
                     "pill": "true",
                     "colWidth": {
                         "unit": "px",
-                        "value": 120
+                        "value": 170
                     }
                 },
                 {
@@ -373,7 +373,7 @@
                 },
                 "triggerFilterGroupOnRefresh": "reports-filter",
                 "refreshTableActions": [],
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": true
