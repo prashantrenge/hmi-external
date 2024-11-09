@@ -82,7 +82,7 @@
 }
 
 header.header-container {
-    background-color: white !important;
+    background-color: #1889AF!important;
     border-bottom: 1px solid var(--gray-300);
 }
 

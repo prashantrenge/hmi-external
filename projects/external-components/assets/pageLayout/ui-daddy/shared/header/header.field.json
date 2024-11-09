@@ -92,7 +92,7 @@
                         "selectorName": ".header-common__logout .dynamic-style-child",
                         "xs": {
                             "font-size": "26px",
-                            "color": "#0369FF",
+                            "color": "white",
                             "margin-right": "10px"
                         }
                     }],
