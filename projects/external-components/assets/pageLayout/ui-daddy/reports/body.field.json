@@ -273,7 +273,7 @@
                     "accessor": "progress",
                     "colWidth": {
                         "unit": "px",
-                        "value": 100
+                        "value": 120
                     }
                 },
                 {
