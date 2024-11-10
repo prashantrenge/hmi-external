@@ -19,9 +19,20 @@
                             "xs": {
                                 "position": "absolute",
                                 "z-index": "1",
-                                "top": "33px",
-                                "left": "30px",
-                                "width": "68%"
+                                "top": "112px",
+                                "left": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button",
+                            "xs": {
+                                "width": "75px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button .p-button-icon-right",
+                            "xs": {
+                                "margin-right": "4px"
                             }
                         }
                     ],
@@ -36,8 +47,8 @@
             "customAttributes": {
                 "showComponentLoaderOnApply": "reports-table",
                 "buttonOptions": {
-                    "label": "",
-                    "leftIcon": "pi-filter"
+                    "label": "Filter",
+                    "rightIcon": "pi-angle-down"
                 },
                 "filterOptions": [
                     {
