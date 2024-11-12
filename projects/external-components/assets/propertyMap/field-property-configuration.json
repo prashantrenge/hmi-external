@@ -78,10 +78,24 @@
                 "label": "Show Export Excel Button"
             },
             {
+                "propertyName": "excelDownloadConfig",
+                "defaultValueMapping": "excelDownloadConfig",
+                "type": "textarea",
+                "label": "Excel Download Config",
+                "placeholder": "Enter excel download configuration"
+            },
+            {
                 "propertyName": "showExportPdfBtn",
                 "defaultValueMapping": "showExportPdfBtn",
                 "type": "checkbox",
                 "label": "Show Export PDF Button"
+            },
+            {
+                "propertyName": "pdfDownloadConfig",
+                "defaultValueMapping": "pdfDownloadConfig",
+                "type": "textarea",
+                "label": "Pdf Download Config",
+                "placeholder": "Enter pdf download configuration"
             },
             {
                 "propertyName": "showPrintPreviewBtn",
