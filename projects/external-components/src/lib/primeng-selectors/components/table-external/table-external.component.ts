@@ -97,7 +97,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   exportPdf() {
-    if(this.fieldObj.customAttributes.pdfDownloadConfig){    
+    if(this.fieldObj.customAttributes.pdfDownloadConfig && this.fieldObj.customAttributes.excelDownloadConfig.url){    
       this.customApiCall(this.fieldObj.customAttributes.pdfDownloadConfig).subscribe((data: Blob) => {
        
       });
@@ -145,7 +145,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   exportExcel() {
-    if(this.fieldObj.customAttributes.excelDownloadConfig){
+    if(this.fieldObj.customAttributes.excelDownloadConfig && this.fieldObj.customAttributes.excelDownloadConfig.url){
       this.customApiCall(this.fieldObj.customAttributes.excelDownloadConfig).subscribe((data: any) => {
        
       });
