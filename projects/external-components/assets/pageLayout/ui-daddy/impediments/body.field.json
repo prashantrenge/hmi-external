@@ -292,7 +292,7 @@
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
                     "name": "excel report",
-                    "url": "https://pams-api.azurewebsites.net/api/v1/Impediment/IssueExportExcel",
+                    "url": "/api/v1/Impediment/IssueExportExcel",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [],
@@ -321,7 +321,7 @@
                 "showExportPdfBtn": true,
                 "pdfDownloadConfig": {
                     "name": "pdf report",
-                    "url": "https://pams-api.azurewebsites.net/api/v1/Impediment/IssueExportPDF",
+                    "url": "/api/v1/Impediment/IssueExportPDF",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [],

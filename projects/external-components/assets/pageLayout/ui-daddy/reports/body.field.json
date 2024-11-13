@@ -382,7 +382,7 @@
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
                     "name": "excel report",
-                    "url": "https://pams-api.azurewebsites.net/api/v1/Report/OverDueReportExcel",
+                    "url": "/api/v1/Report/OverDueReportExcel",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
@@ -429,7 +429,7 @@
                 "showExportPdfBtn": true,
                 "pdfDownloadConfig": {
                     "name": "pdf report",
-                    "url": "https://pams-api.azurewebsites.net/api/v1/Report/OverDueReportPDF",
+                    "url": "/api/v1/Report/OverDueReportPDF",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
