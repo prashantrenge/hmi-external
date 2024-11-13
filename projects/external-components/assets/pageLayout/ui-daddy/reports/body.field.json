@@ -50,6 +50,7 @@
                     "label": "Filter",
                     "rightIcon": "pi-angle-down"
                 },
+                "filterSharedDataAccessor": "filteredValue",
                 "filterOptions": [
                     {
                         "label": "Filter By Area",
@@ -362,14 +363,7 @@
             "caption": "",
             "summary": null,
             "globalFilterFields": [
-                "title",
-                "priority",
-                "progress",
-                "status",
-                "zoneLabel",
-                "circleLabel",
-                "divisionLabel",
-                "substationLabel"
+               
             ],
                 "dataKey": "id",
                 "resizableColumns": false,
@@ -386,7 +380,99 @@
                 "refreshTableActions": [],
                 "columnFilter": false,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "excel report",
+                    "url": "https://pams-api.azurewebsites.net/api/v1/Report/OverDueReportExcel",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
+                    "postTransform": "",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "pdf report",
+                    "url": "https://pams-api.azurewebsites.net/api/v1/Report/OverDueReportPDF",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
+                    "postTransform": "",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": true
             }
         }

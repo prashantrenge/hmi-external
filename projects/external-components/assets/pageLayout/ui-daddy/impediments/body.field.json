@@ -273,9 +273,7 @@
                 "caption": "Issues",
                 "summary": null,
                 "globalFilterFields": [
-                    "remark",
-                    "type",
-                    "activityname"
+                   
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
@@ -290,9 +288,65 @@
                         "apiDataAccessor": ""
                     }
                 },
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "excel report",
+                    "url": "https://pams-api.azurewebsites.net/api/v1/Impediment/IssueExportExcel",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "pdf report",
+                    "url": "https://pams-api.azurewebsites.net/api/v1/Impediment/IssueExportPDF",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": null
             }
         }
