@@ -406,7 +406,7 @@
                     "postTransform": "",
                     "payloadParams": [],
                     "fetch": "",
-                    "downloadFileName": "report.xslx",
+                    "downloadFileName": "report.xlsx",
                     "encodePathAndQueryParams": true,
                     "responseType": "blob",
                     "beforeSubmit": {
