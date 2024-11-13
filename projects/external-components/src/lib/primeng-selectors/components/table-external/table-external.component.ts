@@ -97,7 +97,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   exportPdf() {
-    if(this.fieldObj.customAttributes.pdfDownloadConfig && this.fieldObj.customAttributes.excelDownloadConfig.url){    
+    if(this.fieldObj.customAttributes.pdfDownloadConfig && this.fieldObj.customAttributes.pdfDownloadConfig.url){    
       this.customApiCall(this.fieldObj.customAttributes.pdfDownloadConfig).subscribe((data: Blob) => {
        
       });
