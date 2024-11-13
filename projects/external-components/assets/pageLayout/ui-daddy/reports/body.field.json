@@ -403,7 +403,7 @@
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
                         }
                     ],
-                    "postTransform": "multiDateTransform",
+                    "postTransform": "",
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
@@ -450,7 +450,7 @@
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
                         }
                     ],
-                    "postTransform": "multiDateTransform",
+                    "postTransform": "",
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
