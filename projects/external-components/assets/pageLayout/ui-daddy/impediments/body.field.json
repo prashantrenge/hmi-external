@@ -298,7 +298,7 @@
                     "queryParams": [],
                     "payloadParams": [],
                     "fetch": "",
-                    "downloadFileName": "",
+                    "downloadFileName": "issue.xslx",
                     "encodePathAndQueryParams": true,
                     "responseType": "blob",
                     "beforeSubmit": {
@@ -327,7 +327,7 @@
                     "queryParams": [],
                     "payloadParams": [],
                     "fetch": "",
-                    "downloadFileName": "",
+                    "downloadFileName": "issue.pdf",
                     "encodePathAndQueryParams": true,
                     "responseType": "blob",
                     "beforeSubmit": {

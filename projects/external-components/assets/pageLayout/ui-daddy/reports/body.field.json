@@ -406,7 +406,7 @@
                     "postTransform": "",
                     "payloadParams": [],
                     "fetch": "",
-                    "downloadFileName": "",
+                    "downloadFileName": "report.xslx",
                     "encodePathAndQueryParams": true,
                     "responseType": "blob",
                     "beforeSubmit": {
@@ -453,7 +453,7 @@
                     "postTransform": "",
                     "payloadParams": [],
                     "fetch": "",
-                    "downloadFileName": "",
+                    "downloadFileName": "report.pdf",
                     "encodePathAndQueryParams": true,
                     "responseType": "blob",
                     "beforeSubmit": {
