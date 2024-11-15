@@ -25,7 +25,9 @@
                 "visibleValue": "true"
             },
             "customAttributes": {
-                "src": "/pmtool/app/boards-display/4"
+                "src": "/pmtool/app/boards-display/4",
+                "height": "calc(100vh - 110px)"
+
             }
         }
     ]

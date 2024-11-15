@@ -22,7 +22,9 @@
             "visibleValue": true
         },
         "customAttributes": {
-            "src": "/pmtool/app/tasks"
+            "src": "/pmtool/app/tasks",
+            "height": "calc(100vh - 110px)"
+
         }
       }  
       
