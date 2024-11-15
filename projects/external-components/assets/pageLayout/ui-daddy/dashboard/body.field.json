@@ -21,7 +21,7 @@
                 "visibleValue": true
             },
             "customAttributes": {
-                "src": "https://www.google.com",
+                "src": "/pmtool/app/statistics",
                 "height": "calc(100vh - 110px)"
 
             }
