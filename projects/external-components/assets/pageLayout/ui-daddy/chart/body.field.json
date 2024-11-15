@@ -21,7 +21,9 @@
                 "visibleValue": true
             },
             "customAttributes": {
-                "src": "/pmtool/app/chart"
+                "src": "/pmtool/app/chart",
+                "height": "calc(100vh - 110px)"
+
             }
         }
     ]
