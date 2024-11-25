@@ -395,17 +395,7 @@
                 ],
                 "caption": "MSETCL Users",
                 "summary": null,
-                "globalFilterFields": [
-                    "givenName",
-                    "familyName",
-                    "designation",
-                    "userName",
-                    "email",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
-                ],
+                "globalFilterFields": [],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
@@ -420,7 +410,63 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "Employee Excel Report",
+                    "url": "/api/v1/Employee/EmployeeExcel",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "Employee.xlsx",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "Employee pdf report",
+                    "url": "/api/v1/Employee/EmployeePDF",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "Employee.pdf",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": true
             }
         }
@@ -2891,17 +2937,7 @@
                 ],
                 "caption": "Vendor Users",
                 "summary": null,
-                "globalFilterFields": [
-                    "givenName",
-                    "familyName",
-                    "designation",
-                    "userName",
-                    "email",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
-                ],
+                "globalFilterFields": [],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
@@ -2916,7 +2952,63 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "Vendor Excel Report",
+                    "url": "/api/v1/Employee/VendorExcel",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "Vendor.xlsx",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "Vendor pdf report",
+                    "url": "/api/v1/Employee/VendorPDF",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "Vendor.pdf",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": true
             }
         }
