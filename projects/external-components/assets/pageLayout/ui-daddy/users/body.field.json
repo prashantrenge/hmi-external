@@ -408,7 +408,7 @@
                         "apiDataAccessor": "payload"
                     }
                 },
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
                     "name": "Employee Excel Report",
@@ -2950,7 +2950,7 @@
                         "apiDataAccessor": "payload"
                     }
                 },
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
                     "name": "Vendor Excel Report",
