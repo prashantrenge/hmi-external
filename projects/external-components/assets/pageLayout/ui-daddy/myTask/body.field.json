@@ -134,10 +134,7 @@
                 ],
                 "caption": "My Tasks",
                 "summary": null,
-                "globalFilterFields": [
-                    "title",
-                    "status"
-                ],
+                "globalFilterFields": [],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
@@ -159,9 +156,79 @@
                         "apiDataAccessor": "payload"
                     }
                 },
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "MyTask Excel",
+                    "url": "/api/v1/tasks/MyTaskExcel/:userId",
+                    "method": "GET",
+                    "pathParams": [
+						{
+                            "paramName": "userId",
+                            "mappedField": "userId",
+                            "mappedValue": "",
+                            "valueFormat": "$SHARED_DATA(id)"
+                        }
+					],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "MyTask.xlsx",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "MyTask PDF",
+                    "url": "/api/v1/tasks/MyTaskPDF/:userId",
+                    "method": "GET",
+                    "pathParams": [
+						{
+                            "paramName": "userId",
+                            "mappedField": "userId",
+                            "mappedValue": "",
+                            "valueFormat": "$SHARED_DATA(id)"
+                        }
+					],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "MyTask.pdf",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": true
             }
         }

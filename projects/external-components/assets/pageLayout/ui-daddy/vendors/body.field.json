@@ -336,13 +336,7 @@
                 ],
                 "caption": "Vendors",
                 "summary": null,
-                "globalFilterFields": [
-                    "name",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
-                ],
+                "globalFilterFields": [],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": null,
@@ -355,9 +349,65 @@
                         "apiDataAccessor": ""
                     }
                 },
-                "columnFilter": true,
+                "columnFilter": false,
                 "showExportExcelBtn": true,
+                "excelDownloadConfig": {
+                    "name": "VendorList excel",
+                    "url": "/api/v1/Vendor/VendorListExcel",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "VendorList.xlsx",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showExportPdfBtn": true,
+                "pdfDownloadConfig": {
+                    "name": "VendorList pdf",
+                    "url": "/api/v1/Vendor/VendorListPDF",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "VendorList.pdf",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "blob",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                },
                 "showPrintPreviewBtn": true
             }
         }
