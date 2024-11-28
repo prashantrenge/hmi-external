@@ -82,6 +82,204 @@
                 "disabledValue": "false",
                 "visible": "userType == 'Admin'"
             }
+        },{
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-100",
+                "name": "employee-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "145px",
+                                "left": "148px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button",
+                            "xs": {
+                                "width": "75px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button .p-button-icon-right",
+                            "xs": {
+                                "margin-right": "4px"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "userList",
+                "buttonOptions": {
+                    "label": "Filter",
+                    "rightIcon": "pi-angle-down"
+                },
+                "filterSharedDataAccessor": "filteredValue",
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "filterGroup": [
+                            {
+                                "label": "Zone",
+                                "filterName": "zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Circle",
+                                "filterName": "circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Division",
+                                "filterName": "dividion",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Substation",
+                                "filterName": "name",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "filterConfig": {
+                    "name": "Employee List",
+                    "url": "/api/v1/Employee/List",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "postTransform": "",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "apiDataAccessor": "payload",
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "message": "",
+                        "actions": [
+                            {
+                                "actionType": "setfield",
+                                "field": "$dnd-47$",
+                                "fieldValue": "$RESPONSE$",
+                                "condition": "true",
+                                "formName": ""
+                            }
+                        ]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
+            }
         },
         {
             "baseProperties": {
@@ -408,6 +606,8 @@
                         "apiDataAccessor": "payload"
                     }
                 },
+                "triggerFilterGroupOnRefresh": "employee-filter",
+                "refreshTableActions": [],
                 "columnFilter": false,
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
@@ -415,7 +615,24 @@
                     "url": "/api/v1/Employee/EmployeeExcel",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "Employee.xlsx",
@@ -444,7 +661,24 @@
                     "url": "/api/v1/Employee/EmployeePDF",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "Employee.pdf",
@@ -2628,6 +2862,205 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
+                "id": "dnd-101",
+                "name": "vendor-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "145px",
+                                "left": "148px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button",
+                            "xs": {
+                                "width": "75px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button .p-button-icon-right",
+                            "xs": {
+                                "margin-right": "4px"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "userList",
+                "buttonOptions": {
+                    "label": "Filter",
+                    "rightIcon": "pi-angle-down"
+                },
+                "filterSharedDataAccessor": "filteredValue",
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "filterGroup": [
+                            {
+                                "label": "Zone",
+                                "filterName": "zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Circle",
+                                "filterName": "circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Division",
+                                "filterName": "dividion",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Substation",
+                                "filterName": "name",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "filterConfig": {
+                    "name": "vendor List",
+                    "url": "/api/v1/Employee/List?vendor=yes",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "postTransform": "",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "apiDataAccessor": "payload",
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "message": "",
+                        "actions": [
+                            {
+                                "actionType": "setfield",
+                                "field": "$dnd-86$",
+                                "fieldValue": "$RESPONSE$",
+                                "condition": "true",
+                                "formName": ""
+                            }
+                        ]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
                 "id": "dnd-86",
                 "name": "userList",
                 "library": "primeng"
@@ -2950,6 +3383,8 @@
                         "apiDataAccessor": "payload"
                     }
                 },
+                "triggerFilterGroupOnRefresh": "vendor-filter",
+                "refreshTableActions": [],
                 "columnFilter": false,
                 "showExportExcelBtn": true,
                 "excelDownloadConfig": {
@@ -2957,7 +3392,24 @@
                     "url": "/api/v1/Employee/VendorExcel",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "Vendor.xlsx",
@@ -2986,7 +3438,24 @@
                     "url": "/api/v1/Employee/VendorPDF",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "Vendor.pdf",
