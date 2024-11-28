@@ -16,6 +16,8 @@ import { ListPipe } from './pipes/list/list.pipe';
 import { GenerateWithAiComponent } from './components/generate-with-ai/generate-with-ai.component';
 import { StackblitzEditorComponent } from './components/stackblitz-editor/stackblitz-editor.component';
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
+import { StaticTextComponent } from './components/static-text/static-text.component';
+import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
 
 @NgModule({
     declarations: [
@@ -29,7 +31,9 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent
+        StackblitzEditorComponent,
+        StaticTextComponent,
+        DynamicStringPipe
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -41,7 +45,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent
+        GenerateWithAiComponent, StaticTextComponent
     ],
     providers: [
         DialogService 
