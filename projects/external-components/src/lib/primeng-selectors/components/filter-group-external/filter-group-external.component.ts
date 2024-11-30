@@ -48,12 +48,18 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   appliedFilterPills: IFilterGroup[] = [];
   initializeFilterFormGrp() {
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
-      v.filterGroup.map((item:any)=>{
+      v.filterGroup?.map((item:any)=>{
         if(item.isArrayOfString === true){
           item.labelKey = "label";
           item.valueKey = "value"
         }
-      })
+      });
+      
+      if(v.isArrayOfString === true){
+        v.labelKey = "label";
+        v.valueKey = "value"
+      }
+    
       const data = { ...v, show: false };
       if (v.type === FilterEventType.DEPENDENT) {
         const filterGroup = v.filterGroup.map((dep:any)=> ({ ...dep, value: '' }))
