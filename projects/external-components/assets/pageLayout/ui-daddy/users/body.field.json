@@ -207,6 +207,36 @@
                                 }
                             }
                         ]
+                    },
+                    {
+                        "label": "Filter By Role",
+                        "icon": "",
+                        "type": "dropdown",
+                        "optionList": [
+									{
+										"role": "Admin"
+									},
+									{
+										"role": "User"
+									},
+                                    {
+                                        "role": "Vendor Admin"
+                                    },
+                                    {
+                                        "role": "Vendor User"  
+                                    }
+								],
+                        "labelKey": "role",
+                        "valueKey": "role",
+                        "filterName": "role"
+                    },
+                    {
+                        "label": "Filter By Designation",
+                        "icon": "",
+                        "type": "text",
+                        "labelKey": "designation",
+                        "valueKey": "designation",
+                        "filterName": "designation"
                     }
                 ],
                 "filterConfig": {
@@ -237,6 +267,18 @@
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
                             "mappedValue": "name",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "role",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "role",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "designation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "designation",
                             "valueFormat": ""
                         }
                     ],
@@ -631,6 +673,14 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "role",
+                            "valueFormat": "$SHARED_DATA(filteredValue.role)"
+                        },
+                        {
+                            "paramName": "designation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.designation)"
                         }
                     ],
                     "payloadParams": [],
@@ -677,6 +727,14 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "role",
+                            "valueFormat": "$SHARED_DATA(filteredValue.role)"
+                        },
+                        {
+                            "paramName": "designation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.designation)"
                         }
                     ],
                     "payloadParams": [],
@@ -2984,6 +3042,36 @@
                                 }
                             }
                         ]
+                    },
+                    {
+                        "label": "Filter By Role",
+                        "icon": "",
+                        "type": "dropdown",
+                        "optionList": [
+                            {
+                                "role": "Admin"
+                            },
+                            {
+                                "role": "User"
+                            },
+                            {
+                                "role": "Vendor Admin"
+                            },
+                            {
+                                "role": "Vendor User"  
+                            }
+								],
+                        "labelKey": "role",
+                        "valueKey": "role",
+                        "filterName": "role"
+                    },
+                    {
+                        "label": "Filter By Designation",
+                        "icon": "",
+                        "type": "text",
+                        "labelKey": "designation",
+                        "valueKey": "designation",
+                        "filterName": "designation"
                     }
                 ],
                 "filterConfig": {
@@ -3014,6 +3102,18 @@
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
                             "mappedValue": "name",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "role",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "role",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "designation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "designation",
                             "valueFormat": ""
                         }
                     ],
@@ -3408,6 +3508,14 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "role",
+                            "valueFormat": "$SHARED_DATA(filteredValue.role)"
+                        },
+                        {
+                            "paramName": "designation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.designation)"
                         }
                     ],
                     "payloadParams": [],
@@ -3454,6 +3562,14 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "role",
+                            "valueFormat": "$SHARED_DATA(filteredValue.role)"
+                        },
+                        {
+                            "paramName": "designation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.designation)"
                         }
                     ],
                     "payloadParams": [],
