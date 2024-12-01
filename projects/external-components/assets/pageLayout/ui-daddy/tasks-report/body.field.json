@@ -19,9 +19,21 @@
                             "xs": {
                                 "position": "absolute",
                                 "z-index": "1",
-                                "top": "33px",
-                                "left": "30px",
-                                "width": "68%"
+                                "width": "68%",
+                                "top": "90px",
+                                "left": "32px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button",
+                            "xs": {
+                                "width": "75px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button .p-button-icon-right",
+                            "xs": {
+                                "margin-right": "4px"
                             }
                         }
                     ],
@@ -36,8 +48,8 @@
             "customAttributes": {
                 "showComponentLoaderOnApply": "",
                 "buttonOptions": {
-                    "label": "",
-                    "leftIcon": "pi-filter"
+                    "label": "filter",
+                    "rightIcon": "pi-angle-down"
                 },
                 "filterOptions": [
                     {
@@ -49,7 +61,6 @@
                                 "label": "Task",
                                 "filterName": "act",
                                 "optionList": [],
-                                "isArrayOfString": true,
                                 "optionsConfig": {
                                     "name": "Get task",
                                     "url": "/api/v1/Report/GetTasksForReport",
@@ -57,7 +68,9 @@
                                     "pathParams": [],
                                     "queryParams": [],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD"
+                                    "fetch": "ONLOAD",
+                                    "postTransform": "dropDownOptionTransform"
+
                                 }
                             },
                             {
