@@ -22,3 +22,7 @@ export const multiDateTransform = (value:any)=> {
         return { ...v, expectedStartDate, expectedEndDate, actualStartDate, actualEndDate, createdDate };
     });
 }
+
+export const dropDownOptionTransform = (options:any[]) => {
+    return options.map(option =>({ label:option, value:option }))
+}
