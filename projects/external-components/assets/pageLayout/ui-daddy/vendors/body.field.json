@@ -93,6 +93,219 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
+                "id": "dnd-100",
+                "name": "employee-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "103px",
+                                "left": "153px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button",
+                            "xs": {
+                                "width": "75px"
+                            }
+                        },
+                        {
+                            "selectorName": ".filter-group-css button .p-button-icon-right",
+                            "xs": {
+                                "margin-right": "4px"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "userList",
+                "buttonOptions": {
+                    "label": "Filter",
+                    "rightIcon": "pi-angle-down"
+                },
+                "filterSharedDataAccessor": "filteredValue",
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "filterGroup": [
+                            {
+                                "label": "Zone",
+                                "filterName": "zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Circle",
+                                "filterName": "circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Division",
+                                "filterName": "dividion",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Substation",
+                                "filterName": "name",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Filter By Company Code",
+                        "icon": "",
+                        "type": "text",
+                        "labelKey": "",
+                        "valueKey": "companycode",
+                        "filterName": "companycode"
+                    }
+                ],
+                "filterConfig": {
+                    "name": "VendorList",
+                    "url": "/api/v1/Vendor/List",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "companycode",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "companycode",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "postTransform": "",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "apiDataAccessor": "",
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "message": "",
+                        "actions": [
+                            {
+                                "actionType": "setfield",
+                                "field": "$dnd-39$",
+                                "fieldValue": "$RESPONSE$",
+                                "condition": "true",
+                                "formName": ""
+                            }
+                        ]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
                 "id": "dnd-39",
                 "name": "vendorList",
                 "library": "primeng"
@@ -356,7 +569,28 @@
                     "url": "/api/v1/Vendor/VendorListExcel",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "companycode",
+                            "valueFormat": "$SHARED_DATA(filteredValue.companycode)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "VendorList.xlsx",
@@ -385,7 +619,28 @@
                     "url": "/api/v1/Vendor/VendorListPDF",
                     "method": "GET",
                     "pathParams": [],
-                    "queryParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+                        },
+                        {
+                            "paramName": "circle",
+                            "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+                        },
+                        {
+                            "paramName": "division",
+                            "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+                        },
+                        {
+                            "paramName": "substation",
+                            "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "companycode",
+                            "valueFormat": "$SHARED_DATA(filteredValue.companycode)"
+                        }
+                    ],
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "VendorList.pdf",
