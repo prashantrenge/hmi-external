@@ -125,6 +125,14 @@
                                 }
                             }
                         ]
+                    },
+                    {
+                        "label": "Filter By Title",
+                        "icon": "",
+                        "type": "text",
+                        "labelKey": "title",
+                        "valueKey": "title",
+                        "filterName": "title"
                     }
                 ],
                 "filterConfig": {
@@ -155,6 +163,12 @@
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
                             "mappedValue": "name",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "title",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "title",
                             "valueFormat": ""
                         }
                     ],
@@ -401,6 +415,10 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "title",
+                            "valueFormat": "$SHARED_DATA(filteredValue.title)"
                         }
                     ],
                     "postTransform": "",
@@ -448,6 +466,10 @@
                         {
                             "paramName": "substation",
                             "valueFormat": "$SHARED_DATA(filteredValue.name)"
+                        },
+                        {
+                            "paramName": "title",
+                            "valueFormat": "$SHARED_DATA(filteredValue.title)"
                         }
                     ],
                     "postTransform": "",
