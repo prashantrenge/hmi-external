@@ -85,7 +85,12 @@
                     "id": "boards",
                     "label": "Boards",
                     "navigateToPage": "/boards"
-                }
+                },
+                {
+                    "id": "SubstationWiseReport",
+                    "label": "Substation Wise Report",
+                    "navigateToPage": "/SubstationWiseReport"
+                  }
             ],
             "layoutProperties": {
                 "css": {
