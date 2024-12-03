@@ -1,30 +1,29 @@
 {
-    "dashboard": [
-        {
-            "baseProperties": {
-                "name": "iframeField",
-                "id": "iframeField",
-                "type": "dynamicField",
-                "library": "primeng",
-                "formName": ""
-            },
-            "libraryComponent": "IframeExternalComponent",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": false,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "customAttributes": {
-                "src": "/pmtool/app/statistics",
-                "height": "calc(100vh - 110px)"
-
-            }
-        }
-    ]
+  "dashboard": [
+    {
+      "baseProperties": {
+        "name": "iframeField",
+        "id": "iframeField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "IframeExternalComponent",
+      "accessor": "",
+      "expressionProperties": {
+        "requiredValue": false,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "",
+        "visibleValue": true
+      },
+      "customAttributes": {
+        "src": "/pmtool/app/statistics",
+        "height": "calc(100vh - 110px)"
+      }
+    }
+  ]
 }
