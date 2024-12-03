@@ -312,43 +312,6 @@
       "customAttributes": {
         "columns": [
           {
-            "colName": "Title",
-            "filterType": "text",
-            "accessor": "title",
-            "colWidth": {
-              "unit": "px",
-              "value": 200
-            }
-          },
-          {
-            "colName": "Priority",
-            "filterType": "multiselect",
-            "accessor": "priority",
-            "colWidth": {
-              "unit": "px",
-              "value": 100
-            }
-          },
-          {
-            "colName": "% Progress",
-            "filterType": "multiselect",
-            "accessor": "progress",
-            "colWidth": {
-              "unit": "px",
-              "value": 120
-            }
-          },
-          {
-            "colName": "Status",
-            "filterType": "multiselect",
-            "accessor": "status",
-            "pill": "true",
-            "colWidth": {
-              "unit": "px",
-              "value": 170
-            }
-          },
-          {
             "colName": "Zone",
             "filterType": "multiselect",
             "accessor": "zoneLabel",
@@ -382,6 +345,25 @@
             "colWidth": {
               "unit": "px",
               "value": 150
+            }
+          },
+          {
+            "colName": "% Progress",
+            "filterType": "multiselect",
+            "accessor": "progress",
+            "colWidth": {
+              "unit": "px",
+              "value": 120
+            }
+          },
+          {
+            "colName": "Status",
+            "filterType": "multiselect",
+            "accessor": "status",
+            "pill": "true",
+            "colWidth": {
+              "unit": "px",
+              "value": 170
             }
           },
           {
@@ -429,19 +411,17 @@
         "responsive": true,
         "dataConfig": {
           "name": "userList",
-          "url": "/api/v1/Report/OverDueReport",
+          "url": "/api/v1/Report/GetSubStationsProgressReport",
           "method": "GET",
           "params": {},
           "postTransform": "multiDateTransform",
           "onSuccess": {}
         },
-        "triggerFilterGroupOnRefresh": "reports-filter",
-        "refreshTableActions": [],
         "columnFilter": false,
         "showExportExcelBtn": true,
         "excelDownloadConfig": {
-          "name": "excel report",
-          "url": "/api/v1/Report/OverDueReportExcel",
+          "name": "excel Sub Station Report",
+          "url": "/api/v1/Report/GetSubStationsProgressReportExcel",
           "method": "GET",
           "pathParams": [],
           "queryParams": [
@@ -462,14 +442,18 @@
               "valueFormat": "$SHARED_DATA(filteredValue.name)"
             },
             {
-              "paramName": "title",
-              "valueFormat": "$SHARED_DATA(filteredValue.title)"
+              "paramName": "progress",
+              "valueFormat": "$SHARED_DATA(filteredValue.progress)"
+            },
+            {
+              "paramName": "ststus",
+              "valueFormat": "$SHARED_DATA(filteredValue.status)"
             }
           ],
           "postTransform": "",
           "payloadParams": [],
           "fetch": "",
-          "downloadFileName": "report.xlsx",
+          "downloadFileName": "subStationReport.xlsx",
           "encodePathAndQueryParams": true,
           "responseType": "blob",
           "beforeSubmit": {
@@ -489,8 +473,8 @@
         },
         "showExportPdfBtn": true,
         "pdfDownloadConfig": {
-          "name": "pdf report",
-          "url": "/api/v1/Report/OverDueReportPDF",
+          "name": "pdf Sub Station report",
+          "url": "/api/v1/Report/GetSubStationsProgressReportPDF",
           "method": "GET",
           "pathParams": [],
           "queryParams": [
@@ -511,14 +495,18 @@
               "valueFormat": "$SHARED_DATA(filteredValue.name)"
             },
             {
-              "paramName": "title",
-              "valueFormat": "$SHARED_DATA(filteredValue.title)"
+              "paramName": "progress",
+              "valueFormat": "$SHARED_DATA(filteredValue.progress)"
+            },
+            {
+              "paramName": "status",
+              "valueFormat": "$SHARED_DATA(filteredValue.status)"
             }
           ],
           "postTransform": "",
           "payloadParams": [],
           "fetch": "",
-          "downloadFileName": "report.pdf",
+          "downloadFileName": "subStationReport.pdf",
           "encodePathAndQueryParams": true,
           "responseType": "blob",
           "beforeSubmit": {
