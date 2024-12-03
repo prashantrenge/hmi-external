@@ -168,6 +168,9 @@
               },
               {
                 "status": "In Progress"
+              },
+              {
+                "status": "Closed"
               }
             ]
           }
