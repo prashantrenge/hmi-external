@@ -206,9 +206,9 @@
               "valueFormat": ""
             },
             {
-              "paramName": "Progress",
+              "paramName": "progress",
               "mappedField": "CUSTOM_FIELD_OBJECT",
-              "mappedValue": "Progress",
+              "mappedValue": "progress",
               "valueFormat": ""
             },
             {
