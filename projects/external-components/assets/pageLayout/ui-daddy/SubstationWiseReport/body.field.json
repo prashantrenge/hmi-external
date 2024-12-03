@@ -136,19 +136,19 @@
             "optionList": [
               {
                 "ProgressLabel": "1 to 25 %",
-                "ProgressValue": "25%"
+                "ProgressValue": "25"
               },
               {
                 "ProgressLabel": "26 to 50 %",
-                "ProgressValue": "50%"
+                "ProgressValue": "50"
               },
               {
                 "ProgressLabel": "51 to 75 %",
-                "ProgressValue": "75%"
+                "ProgressValue": "75"
               },
               {
                 "ProgressLabel": "76 to 100 %",
-                "ProgressValue": "100%"
+                "ProgressValue": "100"
               }
             ]
           },
