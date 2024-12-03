@@ -132,7 +132,7 @@
             "type": "dropdown",
             "labelKey": "ProgressLabel",
             "valueKey": "ProgressValue",
-            "filterName": "Progress",
+            "filterName": "progress",
             "optionList": [
               {
                 "ProgressLabel": "1 to 25 %",
