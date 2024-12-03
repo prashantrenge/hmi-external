@@ -1,23 +1,23 @@
 {
   "layout": [
     {
-      "id": "dashboard",
+      "id": "dnd-0",
       "type": "content",
       "layout": {
-        "css": {
-          "customClassName": ""
-        },
         "column": {
-          "count": 2,
           "ratio": {
             "lg": "12",
             "md": "12",
             "sm": "12",
             "xs": "12"
-          },
-          "autoPlace": "false"
+          }
+        },
+        "css": {
+          "configuration": [],
+          "customClassName": null
         }
-      }
+      },
+      "sectionList": []
     }
   ]
 }

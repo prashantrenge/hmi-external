@@ -1,0 +1,531 @@
+{
+  "dnd-0": [
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "dnd-3",
+        "name": "reports-filter",
+        "library": "primeng"
+      },
+      "layoutProperties": {
+        "labelPlacement": "top",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "filter-group-css",
+          "configuration": [
+            {
+              "selectorName": ".filter-group-css",
+              "xs": {
+                "position": "absolute",
+                "z-index": "1",
+                "top": "112px",
+                "left": "30px"
+              }
+            },
+            {
+              "selectorName": ".filter-group-css button",
+              "xs": {
+                "width": "75px"
+              }
+            },
+            {
+              "selectorName": ".filter-group-css button .p-button-icon-right",
+              "xs": {
+                "margin-right": "4px"
+              }
+            }
+          ],
+          "themeClass": "p-button-icon-only p-button-outlined"
+        },
+        "orientation": null
+      },
+      "libraryComponent": "FilterGroupExternalComponent",
+      "expressionProperties": {
+        "visibleValue": "true"
+      },
+      "customAttributes": {
+        "showComponentLoaderOnApply": "reports-table",
+        "buttonOptions": {
+          "label": "Filter",
+          "rightIcon": "pi-angle-down"
+        },
+        "filterSharedDataAccessor": "filteredValue",
+        "filterOptions": [
+          {
+            "label": "Filter By Area",
+            "icon": "",
+            "type": "dependent",
+            "filterGroup": [
+              {
+                "label": "Zone",
+                "filterName": "zone",
+                "optionList": [],
+                "labelKey": "zone",
+                "valueKey": "zone",
+                "optionsConfig": {
+                  "name": "Get Zone",
+                  "url": "/api/v1/Levels/Get?level=zone",
+                  "method": "GET",
+                  "pathParams": [],
+                  "queryParams": [],
+                  "payloadParams": [],
+                  "fetch": "ONLOAD"
+                }
+              },
+              {
+                "label": "Circle",
+                "filterName": "circle",
+                "optionList": [],
+                "labelKey": "circle",
+                "valueKey": "circle",
+                "filterOptionListBy": "zone",
+                "optionsConfig": {
+                  "name": "Get Circle",
+                  "url": "/api/v1/Levels/Get?level=circle",
+                  "method": "GET",
+                  "pathParams": [],
+                  "queryParams": [],
+                  "payloadParams": [],
+                  "fetch": "ONLOAD"
+                }
+              },
+              {
+                "label": "Division",
+                "filterName": "dividion",
+                "optionList": [],
+                "labelKey": "dividion",
+                "valueKey": "dividion",
+                "filterOptionListBy": "circle",
+                "optionsConfig": {
+                  "name": "Get Division",
+                  "url": "/api/v1/Levels/Get?level=division",
+                  "method": "GET",
+                  "pathParams": [],
+                  "queryParams": [],
+                  "payloadParams": [],
+                  "fetch": "ONLOAD"
+                }
+              },
+              {
+                "label": "Substation",
+                "filterName": "name",
+                "optionList": [],
+                "labelKey": "name",
+                "valueKey": "name",
+                "filterOptionListBy": "division",
+                "optionsConfig": {
+                  "name": "Get substation",
+                  "url": "/api/v1/Levels/Get?level=substation",
+                  "method": "GET",
+                  "pathParams": [],
+                  "queryParams": [],
+                  "payloadParams": [],
+                  "fetch": "ONLOAD"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Filter By Progress",
+            "icon": "",
+            "type": "dropdown",
+            "labelKey": "ProgressLabel",
+            "valueKey": "ProgressValue",
+            "filterName": "progress",
+            "optionList": [
+              {
+                "ProgressLabel": "1 to 25 %",
+                "ProgressValue": "25"
+              },
+              {
+                "ProgressLabel": "26 to 50 %",
+                "ProgressValue": "50"
+              },
+              {
+                "ProgressLabel": "51 to 75 %",
+                "ProgressValue": "75"
+              },
+              {
+                "ProgressLabel": "76 to 100 %",
+                "ProgressValue": "100"
+              }
+            ]
+          },
+          {
+            "label": "Filter By Status",
+            "icon": "",
+            "type": "dropdown",
+            "labelKey": "status",
+            "valueKey": "status",
+            "filterName": "status",
+            "optionList": [
+              {
+                "status": "Completed"
+              },
+              {
+                "status": "Assigned"
+              },
+              {
+                "status": "In Progress"
+              },
+              {
+                "status": "Closed"
+              }
+            ]
+          }
+        ],
+        "filterConfig": {
+          "name": "Sub Stations Progress Report",
+          "url": "/api/v1/Report/GetSubStationsProgressReport",
+          "method": "GET",
+          "pathParams": [],
+          "queryParams": [
+            {
+              "paramName": "zone",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "zone",
+              "valueFormat": ""
+            },
+            {
+              "paramName": "circle",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "circle",
+              "valueFormat": ""
+            },
+            {
+              "paramName": "division",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "dividion",
+              "valueFormat": ""
+            },
+            {
+              "paramName": "substation",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "name",
+              "valueFormat": ""
+            },
+            {
+              "paramName": "progress",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "progress",
+              "valueFormat": ""
+            },
+            {
+              "paramName": "status",
+              "mappedField": "CUSTOM_FIELD_OBJECT",
+              "mappedValue": "status",
+              "valueFormat": ""
+            }
+          ],
+          "postTransform": "multiDateTransform",
+          "payloadParams": [],
+          "fetch": "",
+          "downloadFileName": "",
+          "encodePathAndQueryParams": true,
+          "responseType": "",
+          "beforeSubmit": {
+            "action": []
+          },
+          "onSuccess": {
+            "pageUrl": "",
+            "deleteTableRow": false,
+            "showSuccessMessage": false,
+            "sharedData": [],
+            "fieldData": [],
+            "clearSharedData": [],
+            "apiDataAccessor": "",
+            "message": "",
+            "actions": [
+              {
+                "actionType": "setfield",
+                "field": "$dnd-2$",
+                "fieldValue": "$RESPONSE$",
+                "condition": "true",
+                "formName": ""
+              }
+            ]
+          },
+          "onError": {
+            "pageUrl": "",
+            "sharedData": [],
+            "fieldData": [],
+            "clearSharedData": [],
+            "apiDataAccessor": "",
+            "message": "Something went wrong !",
+            "showErrorMessage": true,
+            "actions": []
+          }
+        }
+      },
+      "events": []
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "dnd-2",
+        "name": "reports-table",
+        "library": "primeng"
+      },
+      "layoutProperties": {
+        "labelPlacement": "top",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "reports_table_status",
+          "configuration": [
+            {
+              "selectorName": ".reports_table_status",
+              "xs": {}
+            },
+            {
+              "selectorName": "[aria-label=\"Assigned\"]",
+              "xs": {
+                "color": "white",
+                "background-color": "#8f369f"
+              }
+            },
+            {
+              "selectorName": "[aria-label=\"In Progress\"]",
+              "xs": {
+                "color": "white",
+                "background-color": "#c19b3e"
+              }
+            },
+            {
+              "selectorName": "[aria-label=\"Completed\"]",
+              "xs": {
+                "color": "white",
+                "background-color": "#0f9d15"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "TableExternalComponent",
+      "events": [],
+      "expressionProperties": {
+        "visibleValue": "true"
+      },
+      "customAttributes": {
+        "columns": [
+          {
+            "colName": "Zone",
+            "filterType": "multiselect",
+            "accessor": "zoneLabel",
+            "colWidth": {
+              "unit": "px",
+              "value": 150
+            }
+          },
+          {
+            "colName": "Circle",
+            "filterType": "multiselect",
+            "accessor": "circleLabel",
+            "colWidth": {
+              "unit": "px",
+              "value": 150
+            }
+          },
+          {
+            "colName": "Division",
+            "filterType": "multiselect",
+            "accessor": "divisionLabel",
+            "colWidth": {
+              "unit": "px",
+              "value": 150
+            }
+          },
+          {
+            "colName": "Substation",
+            "filterType": "multiselect",
+            "accessor": "substationLabel",
+            "colWidth": {
+              "unit": "px",
+              "value": 150
+            }
+          },
+          {
+            "colName": "% Progress",
+            "filterType": "multiselect",
+            "accessor": "progress",
+            "colWidth": {
+              "unit": "px",
+              "value": 120
+            }
+          },
+          {
+            "colName": "Status",
+            "filterType": "multiselect",
+            "accessor": "status",
+            "pill": "true",
+            "colWidth": {
+              "unit": "px",
+              "value": 170
+            }
+          },
+          {
+            "colName": "Expected Start Date",
+            "filterType": "multiselect",
+            "accessor": "expectedStartDate",
+            "colWidth": {
+              "unit": "px",
+              "value": 100
+            }
+          },
+          {
+            "colName": "Actual Start Date",
+            "filterType": "actualStartDate",
+            "accessor": "actualStartDate",
+            "colWidth": {
+              "unit": "px",
+              "value": 100
+            }
+          },
+          {
+            "colName": "Expected End Date",
+            "filterType": "text",
+            "accessor": "expectedEndDate",
+            "colWidth": {
+              "unit": "px",
+              "value": 100
+            }
+          },
+          {
+            "colName": "Actual End Date",
+            "filterType": "text",
+            "accessor": "actualEndDate",
+            "colWidth": {
+              "unit": "px",
+              "value": 100
+            }
+          }
+        ],
+        "caption": "",
+        "summary": null,
+        "globalFilterFields": [],
+        "dataKey": "id",
+        "resizableColumns": false,
+        "responsive": true,
+        "dataConfig": {
+          "name": "userList",
+          "url": "/api/v1/Report/GetSubStationsProgressReport",
+          "method": "GET",
+          "params": {},
+          "postTransform": "multiDateTransform",
+          "onSuccess": {}
+        },
+        "columnFilter": false,
+        "showExportExcelBtn": true,
+        "excelDownloadConfig": {
+          "name": "excel Sub Station Report",
+          "url": "/api/v1/Report/GetSubStationsProgressReportExcel",
+          "method": "GET",
+          "pathParams": [],
+          "queryParams": [
+            {
+              "paramName": "zone",
+              "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+            },
+            {
+              "paramName": "circle",
+              "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+            },
+            {
+              "paramName": "division",
+              "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+            },
+            {
+              "paramName": "substation",
+              "valueFormat": "$SHARED_DATA(filteredValue.name)"
+            },
+            {
+              "paramName": "progress",
+              "valueFormat": "$SHARED_DATA(filteredValue.progress)"
+            },
+            {
+              "paramName": "status",
+              "valueFormat": "$SHARED_DATA(filteredValue.status)"
+            }
+          ],
+          "postTransform": "",
+          "payloadParams": [],
+          "fetch": "",
+          "downloadFileName": "subStationReport.xlsx",
+          "encodePathAndQueryParams": true,
+          "responseType": "blob",
+          "beforeSubmit": {
+            "action": []
+          },
+          "onSuccess": {},
+          "onError": {
+            "pageUrl": "",
+            "sharedData": [],
+            "fieldData": [],
+            "clearSharedData": [],
+            "apiDataAccessor": "",
+            "message": "Something went wrong !",
+            "showErrorMessage": true,
+            "actions": []
+          }
+        },
+        "showExportPdfBtn": true,
+        "pdfDownloadConfig": {
+          "name": "pdf Sub Station report",
+          "url": "/api/v1/Report/GetSubStationsProgressReportPDF",
+          "method": "GET",
+          "pathParams": [],
+          "queryParams": [
+            {
+              "paramName": "zone",
+              "valueFormat": "$SHARED_DATA(filteredValue.zone)"
+            },
+            {
+              "paramName": "circle",
+              "valueFormat": "$SHARED_DATA(filteredValue.circle)"
+            },
+            {
+              "paramName": "division",
+              "valueFormat": "$SHARED_DATA(filteredValue.dividion)"
+            },
+            {
+              "paramName": "substation",
+              "valueFormat": "$SHARED_DATA(filteredValue.name)"
+            },
+            {
+              "paramName": "progress",
+              "valueFormat": "$SHARED_DATA(filteredValue.progress)"
+            },
+            {
+              "paramName": "status",
+              "valueFormat": "$SHARED_DATA(filteredValue.status)"
+            }
+          ],
+          "postTransform": "",
+          "payloadParams": [],
+          "fetch": "",
+          "downloadFileName": "subStationReport.pdf",
+          "encodePathAndQueryParams": true,
+          "responseType": "blob",
+          "beforeSubmit": {
+            "action": []
+          },
+          "onSuccess": {},
+          "onError": {
+            "pageUrl": "",
+            "sharedData": [],
+            "fieldData": [],
+            "clearSharedData": [],
+            "apiDataAccessor": "",
+            "message": "Something went wrong !",
+            "showErrorMessage": true,
+            "actions": []
+          }
+        },
+        "showPrintPreviewBtn": true
+      }
+    }
+  ]
+}
