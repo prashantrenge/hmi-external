@@ -446,7 +446,7 @@
               "valueFormat": "$SHARED_DATA(filteredValue.progress)"
             },
             {
-              "paramName": "ststus",
+              "paramName": "status",
               "valueFormat": "$SHARED_DATA(filteredValue.status)"
             }
           ],
