@@ -13,6 +13,7 @@ import type { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/c
   - Static text "calendar" shown under the title, centered, Bootstrap 5 muted styling.
   - Click on a date to add a note for that day.
   - Notes are saved in local storage and shown as events on the calendar.
+  - Static test calendar: Renders some preset static test events at load (not removable by user).
   - Bootstrap 5 styling for modal, buttons, and label.
 */
 
@@ -70,6 +71,13 @@ export class FullCalendarComponent extends CommonExternalComponent implements Af
   selectedDate: string = '';
   noteText: string = '';
 
+  // Static test events (not removable by user)
+  readonly staticTestEvents: EventInput[] = [
+    { title: 'Test Event A', start: this.getToday(), allDay: true, color: '#ffc107' },
+    { title: 'Test Event B', start: this.getOffsetDate(2), allDay: true, color: '#198754' },
+    { title: 'Test Event C', start: this.getOffsetDate(-3), allDay: true, color: '#0dcaf0' }
+  ];
+
   constructor() {
     super();
     this.loadNotes();
@@ -84,7 +92,7 @@ export class FullCalendarComponent extends CommonExternalComponent implements Af
             initialView: 'dayGridMonth',
             selectable: true,
             select: (info: DateSelectArg) => this.onDateSelect(info),
-            events: this.getEvents(),
+            events: this.getAllEvents(),
             eventClick: (arg: any) => this.onEventClick(arg)
           };
           const calendarEl: HTMLElement | null = document.getElementById('calendar');
@@ -104,6 +112,9 @@ export class FullCalendarComponent extends CommonExternalComponent implements Af
   }
 
   onEventClick(arg: any): void {
+    // Only allow editing of user notes, not static test events
+    const isStatic = this.staticTestEvents.some(e => e.title === arg.event.title && e.start === arg.event.startStr);
+    if (isStatic) return;
     this.selectedDate = arg.event.startStr;
     this.noteText = this.notes[this.selectedDate] || '';
     this.showModal = true;
@@ -132,10 +143,15 @@ export class FullCalendarComponent extends CommonExternalComponent implements Af
     }));
   }
 
+  getAllEvents(): EventInput[] {
+    // Combine static test events with user notes
+    return [...this.staticTestEvents, ...this.getEvents()];
+  }
+
   updateCalendarEvents(): void {
     if (this.calendar) {
       this.calendar.removeAllEvents();
-      this.getEvents().forEach((event: EventInput) => this.calendar.addEvent(event));
+      this.getAllEvents().forEach((event: EventInput) => this.calendar.addEvent(event));
     }
   }
 
@@ -146,5 +162,18 @@ export class FullCalendarComponent extends CommonExternalComponent implements Af
 
   persistNotes(): void {
     localStorage.setItem('calendar-notes', JSON.stringify(this.notes));
+  }
+
+  // Utility: Today's date in YYYY-MM-DD
+  private getToday(): string {
+    const today: Date = new Date();
+    return today.toISOString().split('T')[0];
+  }
+
+  // Utility: Offset days from today (negative for past, positive for future)
+  private getOffsetDate(offset: number): string {
+    const d: Date = new Date();
+    d.setDate(d.getDate() + offset);
+    return d.toISOString().split('T')[0];
   }
 }
