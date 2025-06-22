@@ -1,15 +1,15 @@
 // full-calendar.component.ts
 
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 // Import FullCalendar types
-import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
+import type { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
 
 /*
   Features:
   - Displays a calendar using FullCalendar.
-  - "Calendar" label/title shown above the calendar (centered, bold).
+  - "Calendar" label/title shown above the calendar (centered, bold, Bootstrap 5 styled).
   - Click on a date to add a note for that day.
   - Notes are saved in local storage and shown as events on the calendar.
   - Bootstrap 5 styling for modal, buttons, and label.
@@ -59,7 +59,7 @@ import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
     }
   `]
 })
-export class FullCalendarComponent extends CommonExternalComponent {
+export class FullCalendarComponent extends CommonExternalComponent implements AfterViewInit {
   calendar!: any;
   calendarOptions!: CalendarOptions;
   notes: { [date: string]: string } = {};
@@ -72,7 +72,7 @@ export class FullCalendarComponent extends CommonExternalComponent {
     this.loadNotes();
   }
 
-  ngAfterViewInit(): void {
+  override ngAfterViewInit(): void {
     import('@fullcalendar/core').then(core => {
       import('@fullcalendar/daygrid').then(dayGridPlugin => {
         import('@fullcalendar/interaction').then(interactionPlugin => {
