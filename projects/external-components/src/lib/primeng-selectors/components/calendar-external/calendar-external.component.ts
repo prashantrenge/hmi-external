@@ -2,20 +2,23 @@
 
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
+import { CalendarOptions, DateSelectArg, EventClickArg, EventDropArg, EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+
+/*
+  Features:
+  - FullCalendar (day grid month view) with Bootstrap 5 styling.
+  - Add, edit, delete notes for any date; notes persist in local storage.
+  - Notes shown as events on the calendar.
+  - Drag & drop events to change their date (updates note date in local storage).
+  - Modal dialog for editing/adding/deleting notes.
+  - All HTML and CSS are inline. Strict typing is used throughout.
+*/
 
 @Component({
   selector: 'app-calendar',
   template: `
-    <!-- 
-      Features:
-      - Displays a calendar using FullCalendar (day grid view)
-      - User can select a date to add/view/edit/delete notes for that date
-      - Notes are stored in local storage and persist between reloads
-      - Uses Bootstrap 5 for modals and layout
-    -->
     <div class="container my-4">
       <div class="row">
         <div class="col-12">
@@ -75,9 +78,11 @@ export class CalendarComponent extends CommonExternalComponent {
       initialView: 'dayGridMonth',
       selectable: true,
       selectMirror: true,
+      editable: true, // Enable drag & drop
       events: this.getNotesAsEvents(),
       select: this.handleDateSelect.bind(this),
       eventClick: this.handleEventClick.bind(this),
+      eventDrop: this.handleEventDrop.bind(this), // Drag & drop handler
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -97,12 +102,29 @@ export class CalendarComponent extends CommonExternalComponent {
   }
 
   // Handle clicking an event (note)
-  handleEventClick(clickInfo: any): void {
+  handleEventClick(clickInfo: EventClickArg): void {
     const dateStr: string = clickInfo.event.startStr;
     this.selectedDate = dateStr;
     this.noteText = this.getNoteForDate(dateStr) || '';
     this.noteExists = !!this.noteText;
     this.showModal = true;
+  }
+
+  // Handle dragging/dropping an event to a new date
+  handleEventDrop(dropInfo: EventDropArg): void {
+    const oldDate: string = dropInfo.oldEvent.startStr;
+    const newDate: string = dropInfo.event.startStr;
+    if (!oldDate || !newDate) return;
+
+    const notes: Record<string, string> = this.getAllNotes();
+    const movedNote: string | undefined = notes[oldDate];
+    if (movedNote) {
+      // Remove old entry and add under new date
+      delete notes[oldDate];
+      notes[newDate] = movedNote;
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(notes));
+      this.updateCalendarEvents();
+    }
   }
 
   // Save note to local storage and update calendar events
