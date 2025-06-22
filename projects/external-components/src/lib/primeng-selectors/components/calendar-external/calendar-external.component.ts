@@ -9,11 +9,11 @@ import interactionPlugin from '@fullcalendar/interaction';
 /*
   Features:
   - FullCalendar (day grid month view) with Bootstrap 5 styling.
+  - "Calendar" label shown above the calendar in bold.
   - Add, edit, delete notes for any date; notes persist in local storage.
   - Notes shown as events on the calendar.
   - Drag & drop events to change their date (updates note date in local storage).
   - Modal dialog for editing/adding/deleting notes.
-  - "Appointment" and "Calendar" labels shown above the calendar in bold.
   - All HTML and CSS are inline. Strict typing is used throughout.
 */
 
@@ -23,7 +23,6 @@ import interactionPlugin from '@fullcalendar/interaction';
     <div class="container my-4">
       <div class="row mb-2">
         <div class="col-12">
-          <span class="fw-bold fs-4 me-3">Appointment</span>
           <span class="fw-bold fs-4 text-primary">Calendar</span>
         </div>
       </div>
