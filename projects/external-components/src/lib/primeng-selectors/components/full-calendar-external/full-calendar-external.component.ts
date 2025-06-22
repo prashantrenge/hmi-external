@@ -10,6 +10,7 @@ import type { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/c
   Features:
   - Displays a calendar using FullCalendar.
   - "Calendar" label/title shown above the calendar (centered, bold, Bootstrap 5 styled).
+  - Static text "calendar" shown under the title, centered, Bootstrap 5 muted styling.
   - Click on a date to add a note for that day.
   - Notes are saved in local storage and shown as events on the calendar.
   - Bootstrap 5 styling for modal, buttons, and label.
@@ -23,6 +24,8 @@ import type { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/c
       <div class="d-flex justify-content-center align-items-center mb-3">
         <span class="badge bg-primary fs-4 fw-bold px-4 py-2">Calendar</span>
       </div>
+      <!-- Static text below the title -->
+      <div class="text-center text-muted mb-3 fs-6">calendar</div>
       <div id="calendar" #calendar></div>
     </div>
 
