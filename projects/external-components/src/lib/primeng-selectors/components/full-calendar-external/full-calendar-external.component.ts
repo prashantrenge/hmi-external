@@ -9,7 +9,7 @@ import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
 /*
   Features:
   - Displays a calendar using FullCalendar.
-  - "Calendar" label/title shown above the calendar.
+  - "Calendar" label/title shown above the calendar (centered, bold).
   - Click on a date to add a note for that day.
   - Notes are saved in local storage and shown as events on the calendar.
   - Bootstrap 5 styling for modal, buttons, and label.
@@ -20,7 +20,9 @@ import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
   template: `
     <div class="container mt-4">
       <!-- Calendar label/title -->
-      <h2 class="mb-3 text-center fw-bold">Calendar</h2>
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <span class="badge bg-primary fs-4 fw-bold px-4 py-2">Calendar</span>
+      </div>
       <div id="calendar" #calendar></div>
     </div>
 
@@ -58,7 +60,7 @@ import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
   `]
 })
 export class FullCalendarComponent extends CommonExternalComponent {
-  calendar: any;
+  calendar!: any;
   calendarOptions!: CalendarOptions;
   notes: { [date: string]: string } = {};
   showModal: boolean = false;
@@ -71,7 +73,6 @@ export class FullCalendarComponent extends CommonExternalComponent {
   }
 
   ngAfterViewInit(): void {
-    // Dynamically import FullCalendar to avoid SSR issues
     import('@fullcalendar/core').then(core => {
       import('@fullcalendar/daygrid').then(dayGridPlugin => {
         import('@fullcalendar/interaction').then(interactionPlugin => {
@@ -83,7 +84,7 @@ export class FullCalendarComponent extends CommonExternalComponent {
             events: this.getEvents(),
             eventClick: (arg: any) => this.onEventClick(arg)
           };
-          const calendarEl = document.getElementById('calendar');
+          const calendarEl: HTMLElement | null = document.getElementById('calendar');
           if (calendarEl) {
             this.calendar = new core.Calendar(calendarEl, this.calendarOptions);
             this.calendar.render();
@@ -93,14 +94,12 @@ export class FullCalendarComponent extends CommonExternalComponent {
     });
   }
 
-  // Handle date selection
   onDateSelect(info: DateSelectArg): void {
     this.selectedDate = info.startStr;
     this.noteText = this.notes[this.selectedDate] || '';
     this.showModal = true;
   }
 
-  // Handle event click (edit note)
   onEventClick(arg: any): void {
     this.selectedDate = arg.event.startStr;
     this.noteText = this.notes[this.selectedDate] || '';
