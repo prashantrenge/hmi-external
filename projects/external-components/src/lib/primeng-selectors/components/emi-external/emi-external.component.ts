@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 // Features:
+// - EMI label prominently displayed at the top (as "EMI").
 // - Monthly reminder creation with title, description, and date.
 // - Full calendar view to display reminders.
-// - Reminders stored in local storage.
+// - Reminders stored in local storage by default.
 // - Uses Bootstrap 5 for styling.
-// - Displays a prominent "EMI" label at the top of the component.
+// - Strict type checking for all variables.
 
 interface EmiReminder {
   id: string;
@@ -19,10 +20,15 @@ interface EmiReminder {
   selector: 'app-emi',
   template: `
     <div class="container py-4">
-      <!-- EMI Label -->
+      <!-- EMI Label (Prominent) -->
       <div class="d-flex align-items-center mb-3">
         <span class="badge bg-primary fs-5 px-4 py-2 me-2">EMI</span>
         <h2 class="mb-0">Monthly Reminder</h2>
+      </div>
+
+      <!-- EMI Label Below Title (as per request) -->
+      <div class="mb-3">
+        <span class="badge bg-info text-dark fs-6 px-3 py-1">lebel emi</span>
       </div>
 
       <form (ngSubmit)="addReminder()" #reminderForm="ngForm" class="row g-3 mb-4">
