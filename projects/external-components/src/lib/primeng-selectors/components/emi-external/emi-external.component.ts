@@ -6,6 +6,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 // - Full calendar view to display reminders.
 // - Reminders stored in local storage.
 // - Uses Bootstrap 5 for styling.
+// - Displays a prominent "EMI" label at the top of the component.
 
 interface EmiReminder {
   id: string;
@@ -18,7 +19,12 @@ interface EmiReminder {
   selector: 'app-emi',
   template: `
     <div class="container py-4">
-      <h2 class="mb-4">Monthly Reminder</h2>
+      <!-- EMI Label -->
+      <div class="d-flex align-items-center mb-3">
+        <span class="badge bg-primary fs-5 px-4 py-2 me-2">EMI</span>
+        <h2 class="mb-0">Monthly Reminder</h2>
+      </div>
+
       <form (ngSubmit)="addReminder()" #reminderForm="ngForm" class="row g-3 mb-4">
         <div class="col-md-4">
           <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="newReminder.title" required maxlength="50">
@@ -121,7 +127,7 @@ export class EmiComponent extends CommonExternalComponent {
   }
 
   deleteReminder(id: string): void {
-    this.reminders = this.reminders.filter(r => r.id !== id);
+    this.reminders = this.reminders.filter((r: EmiReminder) => r.id !== id);
     this.saveReminders();
     this.generateCalendar();
   }
@@ -131,34 +137,33 @@ export class EmiComponent extends CommonExternalComponent {
   }
 
   loadReminders(): void {
-    const data = localStorage.getItem('emi_reminders');
+    const data: string | null = localStorage.getItem('emi_reminders');
     this.reminders = data ? JSON.parse(data) : [];
   }
 
   hasReminder(date: string): boolean {
-    return this.reminders.some(r => r.date === date);
+    return this.reminders.some((r: EmiReminder) => r.date === date);
   }
 
   getRemindersCount(date: string): number {
-    return this.reminders.filter(r => r.date === date).length;
+    return this.reminders.filter((r: EmiReminder) => r.date === date).length;
   }
 
   generateCalendar(): void {
-    const firstDay = new Date(this.currentYear, this.currentMonth, 1);
-    const lastDay = new Date(this.currentYear, this.currentMonth + 1, 0);
+    const firstDay: Date = new Date(this.currentYear, this.currentMonth, 1);
+    const lastDay: Date = new Date(this.currentYear, this.currentMonth + 1, 0);
 
     const weeks: { day: number | null, fullDate: string }[][] = [];
     let week: { day: number | null, fullDate: string }[] = [];
 
-    let started = false;
     for (let i = 0; i < 42; i++) {
-      const dayNum = i - firstDay.getDay() + 1;
-      let day = null;
-      let fullDate = '';
+      const dayNum: number = i - firstDay.getDay() + 1;
+      let day: number | null = null;
+      let fullDate: string = '';
       if (dayNum > 0 && dayNum <= lastDay.getDate()) {
         day = dayNum;
-        const monthStr = String(this.currentMonth + 1).padStart(2, '0');
-        const dayStr = String(day).padStart(2, '0');
+        const monthStr: string = String(this.currentMonth + 1).padStart(2, '0');
+        const dayStr: string = String(day).padStart(2, '0');
         fullDate = `${this.currentYear}-${monthStr}-${dayStr}`;
       }
       week.push({ day, fullDate });
