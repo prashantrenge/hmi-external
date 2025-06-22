@@ -16,6 +16,10 @@
     "primeicons": "^7.0.0",
     "primeng": "^18.0.2",
     "tslib": "^2.0.0",
-    "xlsx": "0.18.5"
+    "xlsx": "0.18.5",
+    "@fullcalendar/angular": "^7.0.0",
+    "@fullcalendar/core": "^7.0.0",
+    "@fullcalendar/daygrid": "^7.0.0",
+    "@fullcalendar/interaction": "^7.0.0"
   }
 }
