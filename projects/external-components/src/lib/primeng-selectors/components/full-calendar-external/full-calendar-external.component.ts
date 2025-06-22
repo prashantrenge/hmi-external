@@ -6,17 +6,21 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 // Import FullCalendar types
 import { CalendarOptions, DateSelectArg, EventInput } from '@fullcalendar/core';
 
+/*
+  Features:
+  - Displays a calendar using FullCalendar.
+  - "Calendar" label/title shown above the calendar.
+  - Click on a date to add a note for that day.
+  - Notes are saved in local storage and shown as events on the calendar.
+  - Bootstrap 5 styling for modal, buttons, and label.
+*/
+
 @Component({
   selector: 'app-full-calendar',
   template: `
-    <!--
-      Features:
-      - Displays a calendar using FullCalendar.
-      - Click on a date to add a note for that day.
-      - Notes are saved in local storage and shown as events on the calendar.
-      - Bootstrap 5 styling for modal and buttons.
-    -->
     <div class="container mt-4">
+      <!-- Calendar label/title -->
+      <h2 class="mb-3 text-center fw-bold">Calendar</h2>
       <div id="calendar" #calendar></div>
     </div>
 
@@ -57,7 +61,7 @@ export class FullCalendarComponent extends CommonExternalComponent {
   calendar: any;
   calendarOptions!: CalendarOptions;
   notes: { [date: string]: string } = {};
-  showModal = false;
+  showModal: boolean = false;
   selectedDate: string = '';
   noteText: string = '';
 
@@ -119,7 +123,7 @@ export class FullCalendarComponent extends CommonExternalComponent {
   }
 
   getEvents(): EventInput[] {
-    return Object.keys(this.notes).map(date => ({
+    return Object.keys(this.notes).map((date: string) => ({
       title: this.notes[date],
       start: date,
       allDay: true
@@ -129,12 +133,12 @@ export class FullCalendarComponent extends CommonExternalComponent {
   updateCalendarEvents(): void {
     if (this.calendar) {
       this.calendar.removeAllEvents();
-      this.getEvents().forEach(event => this.calendar.addEvent(event));
+      this.getEvents().forEach((event: EventInput) => this.calendar.addEvent(event));
     }
   }
 
   loadNotes(): void {
-    const data = localStorage.getItem('calendar-notes');
+    const data: string | null = localStorage.getItem('calendar-notes');
     this.notes = data ? JSON.parse(data) : {};
   }
 
